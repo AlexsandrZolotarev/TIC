@@ -1,0 +1,55 @@
+
+body{
+    background-color: rgb(21, 21, 21);
+}
+
+.h1_Header
+{
+    color: white;
+    margin: 20px auto;
+    border: 12px solid transparent;
+    animation: 4s rotate linear infinite;
+    border-image: linear-gradient(var(--angle), #FF52E5, #F6D242) 1;
+    display: table;
+    padding: 5px;
+    font-size: 70px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+@keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+.main_buttons__start
+{
+    position: relative;
+    display: table;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    font-size: 22px;
+    font-family: sans-serif;
+    letter-spacing: 1.1px;
+    padding: 5px;
+    padding: 10px 90px;
+    border: 3.5px solid #c60981;
+    border-radius: 25px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.tictactoe
+{
+  background-color: #c60981;
+}
+.tictactoe td
+{
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
