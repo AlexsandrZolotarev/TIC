@@ -1,27 +1,31 @@
 "use strict";
 
+export {getValuesPadding} 
+
+export {tictactoeButton,styleTictactoeButton} 
 
 function getValuesPadding(value)
 {
     return value.padding.split('px').map((item) => +item)
 }
-export {getValuesPadding} 
 function addNewSqript()
 {
     let script = document.createElement('script');
     script.type = 'module';
-    script.setAttribute('src','/js/scriptTicTactoe.js');
+    script.setAttribute('src','/js/scriptGetName.js');
     document.body.appendChild(script);
 }
 
 
 
-let tictactoe = document.getElementById('main_buttons__startId');
-let styleTictactoe = getComputedStyle(tictactoe);
-let valuesPadding = getValuesPadding(styleTictactoe);
+let tictactoeButton = document.getElementById('main_buttons__startId');
+let styleTictactoeButton = getComputedStyle(tictactoeButton);
+let valuesPadding = getValuesPadding(styleTictactoeButton);
 
-tictactoe.addEventListener('focus',() => {
-    tictactoe.innerHTML = ''; 
+
+
+tictactoeButton.addEventListener('focus',() => {
+    tictactoeButton.innerHTML = ''; 
     let interval = setInterval(() =>
         {
             if(valuesPadding[0] > 200) 
@@ -29,7 +33,7 @@ tictactoe.addEventListener('focus',() => {
                 addNewSqript();
                 clearInterval(interval);
             } 
-            tictactoe.style.padding = `${valuesPadding[0]}px ${valuesPadding[1]}px`;
+            tictactoeButton.style.padding = `${valuesPadding[0]}px ${valuesPadding[1]}px`;
             valuesPadding[0] += 0.7;
             valuesPadding[1] += 0.7;
         },7);
