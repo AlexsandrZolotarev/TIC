@@ -16,27 +16,33 @@ function addNewSqript()
     document.body.appendChild(script);
 }
 
-
-
 let tictactoeButton = document.getElementById('main_buttons__startId');
 let styleTictactoeButton = getComputedStyle(tictactoeButton);
 let valuesPadding = getValuesPadding(styleTictactoeButton);
 
+let one_call = false;
 
+tictactoeButton.addEventListener('click',() => {
 
-tictactoeButton.addEventListener('focus',() => {
-    tictactoeButton.innerHTML = ''; 
-    let interval = setInterval(() =>
+    if(one_call == false)
+    {
+        valuesPadding[1] = 0;
+        valuesPadding[0] = 0;
+        tictactoeButton.innerHTML = ''; 
+        let interval = setInterval(() =>
         {
-            if(valuesPadding[0] > 200) 
+            if(valuesPadding[0] > 20  && valuesPadding[1] > 20 ) 
             {
+                one_call = true;
                 addNewSqript();
                 clearInterval(interval);
             } 
-            tictactoeButton.style.padding = `${valuesPadding[0]}px ${valuesPadding[1]}px`;
-            valuesPadding[0] += 0.7;
-            valuesPadding[1] += 0.7;
+            tictactoeButton.style.padding = `${valuesPadding[0]}% ${valuesPadding[1]}%`;
+            valuesPadding[0] += 0.1;
+            valuesPadding[1] += 0.1;
         },7);
+    }
+    
 
 } , true);
 
