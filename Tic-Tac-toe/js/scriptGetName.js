@@ -2,7 +2,9 @@
 
 import {tictactoeButton} from './script.js'
 
+import {addNewSqript} from "./scriptAddNewJsFile.js"
 
+export {players}
 class Players
 {
     constructor(name)
@@ -10,14 +12,22 @@ class Players
         this.name = name;
     }
 
-    // get name(){
-    //     return this._name;
-    // }
+    get name()
+    {
+        return this._name;
+    }
+    set name(value) {
+        if (value.length < 4) {
+          alert("Имя слишком короткое.");
+          return;
+        }
+        this._name = value;
+      }
     winner(value) {
         return this.winnerPlay = value;
     }
 }
-let players = new Object();
+
 let blockInputName = document.createElement('div');
 blockInputName.style.display = 'flex';
 
@@ -69,20 +79,21 @@ input.addEventListener('input',function (){
     else buttonInForm.style.display = 'none';
 });
 
+let players = new Object();
+
 buttonInForm.addEventListener('click', function () {
-    if(input.value.length >= 1)
+    
+    if(Object.keys(players).length >= 1) 
     {
-        players[`player${input.value}`] = (new Players(`${input.value}`));
-       
-        for(let player in players)
-        { 
-            console.log(players.player);
-            console.log(player.name);
-            console.log(players.player.name);
-        }
-        input.value = '';
-        input.placeholder = 'Enter player2 name';
+        blockInputName.style = '';
+        blockStatusWithInput.style = '';
+        buttonInForm.style.style = '';
+        addNewSqript('scriptTicTacToe');
     }
-    else alert('Nick is short');
+    players[`player${input.value}`] = (new Players(`${input.value}`));
+    input.value = '';
+    input.placeholder = 'Enter player2 name';
+
+
 });
 

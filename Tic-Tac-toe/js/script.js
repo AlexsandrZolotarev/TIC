@@ -1,19 +1,15 @@
 "use strict";
 
-export {getValuesPadding} 
+import {addNewSqript} from "./scriptAddNewJsFile.js";
 
+export {getValuesPadding} 
 export {tictactoeButton,styleTictactoeButton} 
+
+
 
 function getValuesPadding(value)
 {
     return value.padding.split('px').map((item) => +item)
-}
-function addNewSqript()
-{
-    let script = document.createElement('script');
-    script.type = 'module';
-    script.setAttribute('src','/js/scriptGetName.js');
-    document.body.appendChild(script);
 }
 
 let tictactoeButton = document.getElementById('main_buttons__startId');
@@ -34,7 +30,7 @@ tictactoeButton.addEventListener('click',() => {
             if(valuesPadding[0] > 20  && valuesPadding[1] > 20 ) 
             {
                 one_call = true;
-                addNewSqript();
+                addNewSqript('scriptGetName');
                 clearInterval(interval);
             } 
             tictactoeButton.style.padding = `${valuesPadding[0]}% ${valuesPadding[1]}%`;
