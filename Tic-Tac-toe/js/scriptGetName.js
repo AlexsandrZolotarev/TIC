@@ -85,9 +85,9 @@ buttonInForm.addEventListener('click', function () {
     
     if(Object.keys(players).length >= 1) 
     {
-        blockInputName.style = '';
-        blockStatusWithInput.style = '';
-        buttonInForm.style.style = '';
+        blockInputName.style.display = 'none';
+        blockStatusWithInput.style.display = 'none';
+        buttonInForm.style.display = 'none';
         addNewSqript('scriptTicTacToe');
     }
     players[`player${input.value}`] = (new Players(`${input.value}`));

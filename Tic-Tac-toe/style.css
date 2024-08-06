@@ -47,8 +47,6 @@ body{
 
 .tictactoe
 {
-    display: flex;
-    flex-direction: row;
     background: #474346;
     background-size: cover;
     height: 300px;

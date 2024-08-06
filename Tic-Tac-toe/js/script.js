@@ -1,15 +1,13 @@
 "use strict";
 
-import {addNewSqript} from "./scriptAddNewJsFile.js";
+import {addNewSqript} from "./scriptAddNewJsFile.js"
 
 export {getValuesPadding} 
 export {tictactoeButton,styleTictactoeButton} 
 
-
-
 function getValuesPadding(value)
 {
-    return value.padding.split('px').map((item) => +item)
+    return value.padding.split('px').map((item) => +item);
 }
 
 let tictactoeButton = document.getElementById('main_buttons__startId');
