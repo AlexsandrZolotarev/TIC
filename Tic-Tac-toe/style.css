@@ -57,8 +57,8 @@ body{
 .tictactoe td
 {
   background-color: white;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 3%;
   position: relative;
   top: 0;
@@ -67,7 +67,6 @@ body{
 .tictactoe td:hover
 {
     top: -5px;
-
     background-color: rgb(68, 0, 255);
 }
 
@@ -172,4 +171,40 @@ body{
 .form-button:hover{
   box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71,
   0 0 20px #ff1f71;
+}
+
+.iconCrossPlayer1::before,
+.iconCrossPlayer1::after
+{
+  content: '';
+  position: absolute;
+  top: 40px;
+  display: block;
+  left: 25%;
+  width: 54px;
+  height: 10px;
+  background: rgb(255, 255, 255);
+}
+.iconCrossPlayer1::before
+{
+  transform: rotate(315deg);
+}
+.iconCrossPlayer1::after
+{
+  transform: rotate(45deg);
+}
+
+
+.iconCrossPlayer2::before
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\274c"; 
+  font-size: 50px; 
+  color: white;
+  line-height: 100px;
+  text-align: center; 
 }
