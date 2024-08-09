@@ -2,10 +2,17 @@
 
 import {getValuesPadding} from './script.js'
 
+<<<<<<< HEAD
 import {players} from './scriptGetName.js'
+=======
+import { players } from './scriptGetName.js'
+
+let table = document.createElement('table');
+>>>>>>> 23dc1d42798ba9ccbed0d50232c3cc25954f2efb
 
 import {addNewSqript} from "./scriptAddNewJsFile.js"
 
+<<<<<<< HEAD
 function getWrapperPlayers()
 {
     let section = document.createElement('section');
@@ -178,4 +185,40 @@ tictactoe.style.padding = `${valuesPadding[0] - 120}px ${valuesPadding[1] - 120}
 tictactoe.style.marginTop = '2%';
 
 addNewSqript('scriptGame');
+=======
+let blockPlayer1 = document.createElement('div');
+blockPlayer1.style = `
+    width: 100px;
+    height: 100px;
+    background: purple;  
+`;
+let blockPlayer2 = document.createElement('div');
+blockPlayer2.style = `
+    width: 100px;
+    height: 100px;
+    background: purple;  
+`;
+
+let blockPlayersWithTicTacToe = document.createElement('div');
+blockPlayersWithTicTacToe.style = `
+    display: flex;s
+    flex-direction: row;
+`;
+
+for(let i = 0; i < 3;i++)
+{
+    let tr = document.createElement('tr');
+    
+    for(let j = 0; j < 3;j++)
+    {
+        let td = document.createElement('td');        
+        tr.append(td);
+    }
+    table.append(tr);
+}
+tictactoe.append(blockPlayer1);
+tictactoe.append(table);
+tictactoe.append(blockPlayer2);
+let valuesPadding = getValuesPadding(getComputedStyle(tictactoe));
+>>>>>>> 23dc1d42798ba9ccbed0d50232c3cc25954f2efb
 
