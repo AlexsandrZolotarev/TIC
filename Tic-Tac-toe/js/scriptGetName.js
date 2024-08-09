@@ -81,19 +81,33 @@ input.addEventListener('input',function (){
 
 let players = new Object();
 
+function checkName()
+{
+    players[`player${input.value}`] = (new Players(`${input.value}`));
+    if(players[`player${input.value}`].name == undefined) 
+        {
+            delete players[`player${input.value}`];
+            return false;
+        }
+    return (players[`player${input.value}`].name !== undefined);
+}
+function addScript()
+{
+    blockInputName.style.display = 'none';
+    blockStatusWithInput.style.display = 'none';
+    buttonInForm.style.display = 'none';
+    addNewSqript('scriptTicTacToe');
+}
 buttonInForm.addEventListener('click', function () {
     
-    if(Object.keys(players).length >= 1) 
+    if(Object.keys(players).length > 1) addScript();
+    if(checkName())
     {
-        blockInputName.style.display = 'none';
-        blockStatusWithInput.style.display = 'none';
-        buttonInForm.style.display = 'none';
-        addNewSqript('scriptTicTacToe');
+        buttonInForm.style.display = 'none'
+        if(Object.keys(players).length > 1) addScript();
+        input.value = '';
+        
+        input.placeholder = 'Enter player2 name';
     }
-    players[`player${input.value}`] = (new Players(`${input.value}`));
-    input.value = '';
-    input.placeholder = 'Enter player2 name';
-
-
 });
 
